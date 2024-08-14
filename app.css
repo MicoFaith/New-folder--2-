@@ -1,0 +1,579 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  position: relative;
+}
+/*image styling*/
+.image-container img {
+  width: 100%;
+  height: 1000px;
+}
+.image-container-text {
+  position: absolute;
+  top: 7%;
+  color: #fff;
+  padding: 20px;
+  left: 20%;
+}
+.image-container-text h1 {
+  text-align: center;
+  font-size: 80px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.image-container-text h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  background-color: rgba(197, 89, 18, 0.877);
+  padding: 30px;
+}
+.image-container-text button {
+  margin-left: 300px;
+  margin-top: 30px;
+  padding: 20px;
+  width: 200px;
+}
+/*navbar styling*/
+nav {
+  width: 100%;
+  height: 75px;
+  background-color: #fff;
+  color: #141414;
+  padding: 0px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 0;
+}
+.logo span {
+  color: rgba(197, 89, 18, 0.877);
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-right: 30px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #141414;
+  transition: 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #594444;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar form {
+  display: flex;
+  margin: 0;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.search-bar input:hover {
+  border: 1px solid #72a0d4;
+}
+
+.search-bar button {
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #ccc;
+}
+
+.hamburg {
+  display: none;
+}
+#check{
+  display: none;
+}
+/* Navbar responsiveness */
+@media screen and (max-width: 1040px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburg {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu li,
+  .menu a {
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+  }
+
+  .menu li {
+    margin: 1rem 0;
+  }
+
+  .menu a:hover {
+    margin-left: 2px;
+    transition: all ease-in-out 300ms;
+  }
+
+  #check:checked ~ .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    background-color: #f8f8f8;
+    color: #141414;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #check:checked ~ .menu li {
+    margin: 10px 0;
+  }
+  #check{
+    display: none;
+  }
+}
+/*About Us page styling*/
+.aboutus {
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+.heading h1 {
+  color: rgba(197, 89, 18, 0.877);
+  font-size: 55px;
+  text-align: center;
+  margin-top: 40px;
+}
+.heading h1::after{
+    content: "";
+    height: 4px;
+    width: 230px;
+    background-color: rgba(197, 89, 18, 0.877);
+    display: block;
+    margin: auto;
+    
+        }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 65px auto;
+}
+.content {
+  flex: 1;
+  width: 600px;
+  margin: 0px 25px;
+  text-align: center;
+}
+.content h2{
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #333;
+
+}
+.content p{
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: #666;
+}
+.content button{
+    display: inline-block;
+    background-color: rgba(197, 89, 18, 0.877);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.content button:hover{
+background-color: #ff6347;
+transform: scale(1.1);
+}
+.content-image {
+  flex: 1;
+  width: 600px;
+  margin: auto;
+}
+.content-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* responsiveness for the about page*/
+@media screen and(max-width: 768px){
+    .heading h1 {
+        font-size: 45px;
+        margin-top: 30px;
+    }
+    .aboutus{
+        margin: 0;
+    }
+    .container{
+        width: 100%;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px 40px;
+    }
+    .content {
+        width: 100%;
+        margin: 35px 0px;
+        animation: fadeInUp 2s ease;
+    }
+    .content h2{
+        font-size: 30px;
+    }
+    .content p{
+        font-size: 18px;
+       margin-bottom: 20px;
+    }
+    .content button{
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    .content-image{
+        width: 100%;
+        animation: fadeInRight 2s ease;
+    }
+    .head{
+      font-size: 10px;
+    }
+    .menu{
+      font-size: 1000px;
+    }
+
+}
+ 
+ /*Services page styling*/
+   .services{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 75px auto;
+    text-align: center;
+   }
+ 
+   .card{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 20px;
+    padding: 30px 30px;
+    background-color: #efefef;
+    border-radius: 10px;
+    cursor: pointer;
+   }
+   
+
+   .card:hover{
+    background-color: rgba(227, 224, 222, 0.877);
+    transition: 0.4s ease;
+   }
+   .card .icon{
+    font-size: 50px;
+    margin-bottom: 10px;
+   }
+   .card h2{
+    font-size: 28px;
+    color:rgba(197, 89, 18, 0.877);
+    margin-bottom: 20px;
+   }
+   .card p{
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #5e5e5e;
+   }
+   .button{
+    font-size: 15px;
+    color: #fff;
+    background-color: rgba(197, 89, 18, 0.877);
+    padding:8px 12px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+   }
+   .button:hover{
+    background-color: #f3ae4e;
+    transition: 0.4s ease;
+   }
+  
+   /* contact page styling*/
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+    background-size: cover;
+   }
+   .contact content{
+    max-width: 800px;
+    text-align: center;
+
+   }
+   .contact content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+   }
+
+   .contact content p{
+    font-weight: 300;
+    color: #fff;
+   }
+   .container2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+   }
+   .container2 .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+   }
+   .container2 .contactInfo .box .icon{
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+   }
+   .container2 .contactInfo .box  .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+   }
+   .container2 .contactInfo .box .text{
+    font-weight: 300;
+    color: black;
+   }
+   .contactForm{
+    width: 100%;
+    padding: 40px;
+    background: #fff;
+   }
+   .contactForm h2{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+   }
+   .contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+   }
+   .contactForm .inputBox input,.contactForm .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+   }
+   .contactForm .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+   }
+   .contactForm .inputBox input:focus ~ span,
+   .contactForm .inputBox input:valid ~ span,
+   .contactForm .inputBox textarea:focus ~ span
+   .contactForm .inputBox textarea:valid~ span{
+    color: #e91e63;
+    font-size: 12px ;
+   transform: translateY(-20px) ;
+   }
+   .contactForm .inputBox input[type="submit"]{
+    width: 100px;
+    background-color: rgba(197, 89, 18, 0.877);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+   }
+
+ .contactInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  gap: 30px;
+ }
+   /*footer*/
+  
+   .footer{
+    background-color: #594444 ;
+    color: white;
+    padding: 20px;
+    text-align: center;
+   }
+
+ /* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+  /* Navbar */
+  nav {
+    padding: 0 20px; 
+  }
+  .logo {
+    margin-left: 20px; 
+  }
+  .menu li,
+  a {
+    font-size: 7px; 
+    margin-right: 2px; 
+  }
+  .search-bar {
+    margin-right: 10px;
+  }
+  .search-bar input {
+    font-size: 14px; 
+  }
+  /* Image Container Text */
+  .image-container-text {
+    top: 5%; 
+    left: 10%; 
+  }
+  .image-container-text h1 {
+    font-size: 50px; 
+  }
+  .image-container-text h2 {
+    padding: 20px; 
+  }
+  .image-container-text button {
+    margin-left: 0;
+    margin-top: 20px; 
+  }
+  /* About Us Page */
+  .heading h1 {
+    font-size: 40px; 
+    margin-top: 20px; 
+  }
+  .container {
+    flex-direction: column;
+    margin: 0 auto; /
+  }
+  .content {
+    width: 100%; 
+    margin: 20px 0; 
+  }
+  .content h2 {
+    font-size: 24px; 
+  }
+  .content p {
+    font-size: 16px; 
+    margin-bottom: 20px; 
+  }
+  .content button {
+    font-size: 14px; 
+  }
+  .content-image {
+    width: 100%; 
+  }
+  /* Services Page */
+  .services {
+    flex-direction: column; 
+    margin: 50px auto; 
+    width: 95%;
+  }
+  .card {
+    width: 90%; 
+    margin: 20px auto; 
+  }
+  .card h2 {
+    font-size: 20px; 
+  }
+  .card p {
+    font-size: 14px; 
+  }
+  .button {
+    font-size: 12px; 
+  }
+  /* Contact Page */
+  .contact {
+    padding: 50px 20px; 
+  }
+  .container2 {
+    flex-direction: column; 
+    align-items: center;
+  }
+  .contactForm {
+    padding: 20px; 
+  }
+  .contactForm h2 {
+    font-size: 24px; 
+  }
+  .contactForm .inputBox input,
+  .contactForm .inputBox textarea {
+    font-size: 14px; 
+  }
+  .contactForm .inputBox input[type="submit"] {
+    font-size: 14px; 
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+}
